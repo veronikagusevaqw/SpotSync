@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <section class="homepage-body">
+        @if (User.Identity.IsAuthenticated)  {
+         <a href="/party/app" class="go-to-app">Go to Spotibro</a>
+        }
+        <div class="main-promo-title">Listen and Share Music in Realtime in Spotify</div>
+        <div class="step-container">
+            <div class="step-counter">1</div>
+            <div class="step-text">Login free with your Spotify Premium account</div>
+        </div>
+        <div class="step-container">
+            <div class="step-counter">2</div>
+            <div class="step-text">Create a party and add your music to it</div>
+        </div>
+        <div class="step-container">
+            <div class="step-counter">3</div>
+            <div class="step-text">Have friends join your party and <span class="profit">profit</span> &#129297;</div>
+        </div>
+    </section>
+

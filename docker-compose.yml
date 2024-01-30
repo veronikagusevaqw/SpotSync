@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  spotsync:
+    image: ${DOCKER_REGISTRY-}spotsync
+    build:
+      context: .
+      dockerfile: SpotSync/Dockerfile
+    ports:
+      - "44346:443"
+    environment:
+      - "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation"
+  database:
+    image: postgres
+    environment:
+      - "POSTGRES_PASSWORD=test12345"
+      - "ASPNETCORE_ENVIRONMENT=Production"
+    ports:
+      - "5432:5432"
